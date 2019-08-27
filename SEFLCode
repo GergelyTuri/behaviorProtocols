@@ -1,0 +1,56 @@
+\ SEFL protocol Turi 8-18-2019
+\ Sould be saved in ASCII or DOS text and saved as .MPC
+
+
+\ Output vaiables
+
+^Shock = 1
+
+\ Program starts here
+
+\ random numbers btw 1-60: 29 39 53 24 5
+
+S.S.1,
+S1,
+	#START: ON ^Shock --->S2
+
+S2,
+	5': ON ^Shock ---> S3
+
+S3,
+	1": OFF ^Shock ---> S4
+
+S4,
+	24': ON ^Shock ---> S5
+
+S5,
+	1": OFF ^Shock --->S6
+
+S6,
+	29': ON ^Shock --->S7
+
+S7,
+	1": OFF ^Shock --->S8
+
+S8,
+	39': ON ^Shock --->S9
+
+S9,
+	1": OFF ^Shock --->S10
+
+S10,
+	53': ON ^Shock --->S11
+
+S11,
+	1": OFF ^Shock --->SX
+
+\ This will stop the program, write the data on the Harddrive and flush the memory
+\ Replace STOPABORTFLUSH with STOPABORT or STOPKILL if you don't want to save rhe 
+\ data
+
+S.S.2,
+S1,
+	#START: ---> S2
+
+S2,
+	60': ---> STOPABORTFLUSH  \ this might be 1" or something small?
